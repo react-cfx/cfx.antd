@@ -1,14 +1,14 @@
 {
-  "name": "cfx-antd",
-  "description": "cfx Ant-Design",
+  "name": "cfx.antd",
+  "description": "Ant-Design write with cfx",
   "author": ":FooTearth <footearth@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mooxe000/cfx-antd.git"
+    "url": "https://github.com/Mooxe000/cfx.antd.git"
   },
   "bugs": {
-    "url": "https://github.com/Mooxe000/cfx-antd/issues"
+    "url": "https://github.com/Mooxe000/cfx.antd/issues"
   },
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --content-base dist --config webpack/dev.conf.coffee"
