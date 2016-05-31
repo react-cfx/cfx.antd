@@ -10,6 +10,8 @@
   h1
 } = Comps
 
+styles = require './style.css'
+
 DocumentTitle = cfxify require 'react-document-title'
 Layout = require '../Layout/index.coffee'
 # Link = require './Link'
@@ -23,8 +25,14 @@ module.exports = cfx
 
   render: ->
 
-    DocumentTitle
-      title: 'Ant Design - 一个 UI 设计语言'
+    div {}
+    ,
+      DocumentTitle
+        title: 'Ant Design - 一个 UI 设计语言'
+    ,
+      style
+        dangerousInnerHtml:
+          __html: styles
     ,
       Layout {}
     #   ,

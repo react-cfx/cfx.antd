@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "antd": "^1.2.1",
-    "normalize.css": "^4.1.1",
+    "classnames": "^2.2.5",
     "radium": "^0.17.1",
     "react": "^15.1.0",
     "react-css-modules": "^3.7.6",

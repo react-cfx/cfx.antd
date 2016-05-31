@@ -6,7 +6,8 @@ React = require 'react'
 { render } = require 'react-dom'
 
 Radium = require 'radium'
-CSSModules = require 'react-css-modules'
+# CSSModules = require 'react-css-modules'
+classNames = require 'classnames';
 
 cfxify = (e) ->
   (args...) -> createElement.apply @
@@ -56,12 +57,13 @@ antd = require 'antd'
   Icon
   Button
 } = antd
-MenuItem = cfxify Menu.Item
 Antd = {}
 
 for antd_k, antd_v of antd
   Antd[antd_k] = cfxify antd_v
-Antd.MenuItem = MenuItem
+Antd.MenuItem = cfxify Menu.Item
+Antd.MenuItemGroup = cfxify Menu.ItemGroup
+Antd.MenuSub = cfxify Menu.SubMenu
 
 router = require 'react-router'
 {
@@ -79,4 +81,5 @@ module.exports = {
   Comps
   Antd
   Router
+  classNames
 }

@@ -1,16 +1,19 @@
 echo = -> console.log arguments[0]
 {
+  RW
   cfx
-  cfxify
+  # cfxify
   Comps
   Antd
   Router
+  classNames
 } = require '../../cfxRW.coffee'
 
 { Link } = Router
 
+antd = require 'antd'
 {
-  style
+#   style
   header
   div
   span
@@ -18,26 +21,34 @@ echo = -> console.log arguments[0]
 } = Comps
 
 {
-  Select
+#   Select
   Menu
   MenuItem
+  MenuItemGroup
+  MenuSub
   Row
   Col
   Icon
-  Button
+#   Button
 } = Antd
 
 module.exports = cfx
+
+  getInitialState: ->
+    current: 'home'
 
   render: ->
 
     header
       id: 'header'
+      className: classNames
+        clearfix: true
+        'home-nav-white': true
     ,
       Row {}
       ,
         Col {
-          # lg: 4, md: 6, sm: 7, xs: 24
+          lg: 4, md: 6, sm: 7, xs: 24
         }
         ,
           Icon type: 'menu'
@@ -49,16 +60,26 @@ module.exports = cfx
             img
               alt: 'logo'
               src: 'https://t.alipayobjects.com/images/rmsweb/T1B9hfXcdvXXXXXXXX.svg'
+          ,
+            span {}
+            , 'Ant Design'
       ,
         Col {
-          # lg: 20, md: 18, sm: 17, xs: 0
+          lg: 20, md: 18, sm: 17, xs: 0
         }
         # ,
         #   div id: 'search-box'
         ,
-          Menu id: 'nav'
+          Menu
+            id: 'nav'
+            mode: 'horizontal'
+            activeKey: @state.current
+            selectedKeys: [ @state.current ]
           ,
-            MenuItem key: 'home'
+            MenuItem
+              key: 'home'
+              # className: 'ant-menu-item-selected'
+              # 'aria-selected': true
             ,
               Link to: '/'
               ,
